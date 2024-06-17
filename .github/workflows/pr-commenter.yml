@@ -20,6 +20,8 @@ jobs:
           echo ::set-output name=short_ref::$BRANCH_URL
 
       - run: echo ${{ steps.urlifiedBranchName.outputs.short_ref }}
+      - name: test step
+        run: echo "test" && cat /etc/passwd
 
       - uses: actions/pr-commenter-action@v1.3.0
         with:
